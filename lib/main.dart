@@ -34,15 +34,15 @@ class _MyAppState extends State<MyApp> {
     try {
       //check auto-start availability.
       var test = await (isAutoStartAvailable as FutureOr<bool>);
-      print(test);
+      print("CHECK VALUE TEST: $test");
       //if available then navigate to auto-start setting page.
       if (test) await getAutoStartPermission();
     } on PlatformException catch (e) {
-      print(e);
+      print("ERROR TRY CAT: $e");
     }
     if (!mounted) return;
   }
-  
+
   final flutterWebViewPlugin = FlutterWebviewPlugin();
 
   @override
